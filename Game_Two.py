@@ -1,0 +1,46 @@
+import time
+import random
+from random import randrange
+print("Bienvenue au joueur !!!")
+time.sleep(2)
+print("")
+print("Vous disposez de 1 000 fcfa.")
+time.sleep(2)
+print("")
+chiffre1=int()
+chiffre2=int()
+chiffre1_var=randrange(50)
+chiffre2_var=randrange(50)
+mise=int()
+a=0
+while a==0:
+    print("Choisisez un nombre entre 0 et 20")
+    chiffre1=input("Entrez le 1er chiffre sur lequel vous souhaitez miser:")
+    print("1er chiffre choisi:",chiffre1)
+    chiffre2=input("Entrez le 2éme chiffre sur lequel vous souhaitez miser:")
+    print("2éme chiffre choisi:",chiffre2)
+    time.sleep(1)
+    mise=input("Combien souhaitez vous miser :")
+    time.sleep(1)
+    print("Vous avez miser:",mise,"f")
+    print("la roue tourne ,patientez 3secs..")
+    print("3")
+    time.sleep(1)
+    print("2")
+    time.sleep(1)
+    print("1")
+    time.sleep(1)
+    print("les nombres gagnant sont:",chiffre1_var," et ",chiffre2_var)
+    time.sleep(1)
+    if int(chiffre1) == int(chiffre1_var) and int(chiffre2) == int(chiffre2_var ) or chiffre1==chiffre2_var and chiffre2==chiffre1_var:
+        print("Félicitation vous avez parfaitement deviner les deux chiffres gagnant.")
+        time.sleep(1)
+        print("La somme miser viens de doubler !!!")
+    elif 
+        print("Vous avez seulement deviner l'un des chiffres gagnant")
+        time.sleep(1)
+        print("La somme miser est donc augmenter de 50%")
+    else:
+        print("Vous n'avez malheureusement deviner aucun des chiffres gagnant ")
+        time.sleep(1)
+        print("La somme miser est donc retirer de votre compte")

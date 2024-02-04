@@ -1,0 +1,521 @@
+import time
+import random
+import tkinter
+import hashlib
+from hashlib import sha256
+from tkinter import messagebox
+from tkinter import*
+from random import randrange
+winner={0:"Incroyable !! C'est gagner",1:"Félicitation !!! vous avez deviner le chiffre gagnant.",2:"Waooh !! coup de maitre.",3:"Bien continuons sur cette lancer.",4:"Vous avez beaucoup de chance dite donc."}
+loser={0:"Ca arrive aux meilleur retry",1:"Allez on désespere pas",2:"la prochaine sera la bonne",3:"Pas de bole",4:"La ruine "}
+def secure():
+        chemin ="comptes/"+user_entry.get() 
+        sortie = "comptes/Data subtitutions"
+        keys = sha256(user_entry.get().encode("utf_8")).digest()
+        with open(chemin, "rb") as f_input:
+          with open(sortie, "wb") as f_output:
+            a = 0
+            while f_input.peek():
+                b = ord(f_input.read(1))
+                c = a % len(keys)
+                d = bytes([b ^ keys[c]])
+                f_output.write(d)
+                a = a + 1
+
+        with open(sortie, "rb") as f_output:
+          data = f_output.read()
+          with open(chemin, "wb") as f_input:
+            f_input.write(data)
+            with open(sortie, "rb") as f_output:
+                pass
+            
+def creation():
+    with open("comptes/"+ user_entry.get(),"w") as fichier:
+            fichier.write(str(1500))
+    with open("comptes/" + user_entry.get(), "a") as fichier:
+         
+         fichier.write(str("\n"+password_entry.get()))  
+         time.sleep(0.5)
+    with open("comptes/"+ user_entry.get()+".config","w") as fichier:
+         fichier.write("black")
+    secure()
+    message1.destroy()
+    user_label.destroy()
+    user_entry.destroy()
+    password_label.destroy()
+    password_entry.destroy()
+    btn.destroy()
+    message3.pack()
+    btnn.pack()
+
+def apk():
+    win14=tkinter.Tk()
+    win14.geometry("900x600")
+    f1=tkinter.Label(win14,text="Dans cette app le concepte de monnaie est entierement virtuelle .",font=("bold",30),background="darkgray",fg="black")
+    f1.pack()
+    f2=tkinter.Button(win14,text="Compris",command=win14.quit)
+    f2.pack()
+    win14.mainloop()
+    win14.destroy()
+
+def FRED():
+    win15=tkinter.Tk()
+    f3=tkinter.Label(text="Developped by akuma king @ Allright reserved ☺ ",font=("bold",30),fg="black",background="black")
+    f3.pack()
+    win15.geometry("900x600")
+    win15.mainloop()
+    win15.destroy()
+def modif_color():
+        win2=tkinter.Tk()
+        win2.title("couleur de fond")
+        win2.geometry("900x600")
+        win2.config(bg=bg)
+        bof="black"
+        if bg=="black":
+            bof="white"
+        
+        message10=tkinter.Label(win2,text="Couleur de fond",font=("bold",30),background=bg,fg=bof,pady=25)
+        btn10=tkinter.Button(win2,text="White",command=white_color,font=("bold",30),background="black",fg="light green",width=10) 
+        btn11=tkinter.Button(win2,text="Brown",command=brown_color,font=("bold",30),background="black",fg="light green",width=10)
+        message10.pack()
+        btn12=tkinter.Button(win2,text="Darkgray",command=gray_color,font=("bold",30),background="black",fg="light green",width=10)
+        btn13=tkinter.Button(win2,text="Dark",command=dark_color,font=("bold",30),background="black",fg="light green",width=10)
+        btn14=tkinter.Button(win2,text="Blue",command=aqua_color,font=("bold",30),background="black",fg="light green",width=10)
+        btn15=tkinter.Button(win2,text="Valider",command=win2.quit,font=("bold",30),background=bof,fg="light green",width=10)
+        btn10.pack()
+        btn11.pack()
+        btn12.pack()
+        btn13.pack()
+        btn14.pack()
+        btn15.pack()
+        win2.mainloop()
+        win2.destroy()
+        
+        
+        
+        
+        
+                
+def white_color():
+         with open("comptes/"+ user_entry.get()+".config","w") as fichier:
+               fichier.write("lightgrey")
+def brown_color():
+         with open("comptes/"+ user_entry.get()+".config","w") as fichier:
+               fichier.write("rosybrown")
+def gray_color():
+         with open("comptes/"+ user_entry.get()+".config","w") as fichier:
+               fichier.write("dimgray")
+def dark_color():
+         with open("comptes/"+ user_entry.get()+".config","w") as fichier:
+               fichier.write("black")
+def aqua_color():
+         with open("comptes/"+ user_entry.get()+".config","w") as fichier:
+               fichier.write("cadetblue")
+        
+def connection():
+        """message1.destroy()
+        message2.destroy()
+        entry1.destroy()
+        btn1.destroy()
+        def f():
+            win1.quit
+        win1.title("Page de connection...")
+        titre=tkinter.Label(text="Page de connection",font=50)
+        user_label=tkinter.Label(text="Nom d'utilisteur :")
+        user_entry=tkinter.Entry()
+        password_label=tkinter.Label(text="Mot de passe:")
+        password_entry=tkinter.Entry()
+        btn2=tkinter.Button(text="Soumettre",font=20,width=15,background=bg,fg="light green",command=win1.quit)
+        titre.pack()
+        user_label.pack()
+        user_entry.pack()
+        password_label.pack()
+        password_entry.pack()
+        btn2.pack() """  
+        ae = False
+    
+def passeuh():
+    pass
+def deco():
+    ae=False
+    
+    
+an=True
+while an==True :
+    win1=tkinter.Tk()
+    win1.geometry("900x600")
+    tof=tkinter.PhotoImage(file='mon_log2.png')
+    photos=Label(win1,image=tof)
+    photos.place(x='-500',y='-500')
+    ano=tkinter.Button(text="passer",command=win1.quit,font=("bold",30),bg="khaki")
+    ano.place(x="1100",y='620')
+    win1.mainloop()
+    ano.destroy()
+    photos.destroy()
+    bg="black"
+    fg1="lightgreen"
+    fg2="yellow"
+    fg3="firebrick"
+    
+    win1.config(background=bg)
+    win1.title("Page d'acceuil..")
+    message1=tkinter.Label(text="Bienvenue !!!!",font=("arial",50),bg=bg,fg=fg2,pady=40)
+        
+    message2=tkinter.Label(text="Avez vous deja un compte joueur ??? oui ou non:",font=("bold",30),background=bg,fg=fg1,pady=25)
+        
+    entry1=tkinter.Entry(bg="lightyellow",width=70)
+    btn1=tkinter.Button(text="Soumettre",font=("bold",30),background=bg,fg="light green",command=win1.quit)
+    
+
+    message1.pack()
+    message2.pack()
+    entry1.pack()
+    btn1.pack()
+    win1.mainloop()
+    
+    if entry1.get()!= "non" or entry1.get()!= "non":
+            at=True
+            while at==True:
+                if entry1.get()== "non" or entry1.get()== "oui":
+                    at=False
+                else:
+                    pass
+                    win1.mainloop()   
+    elif entry1.get()=="non":
+            message1.destroy()
+            message2.destroy()
+            entry1.destroy()
+            btn1.destroy()
+            win1.title("Inscription.")
+            message2=tkinter.Label(text="Page d'inscription",font=("bold",30),background=bg,fg=fg2,pady=40)
+            message1=tkinter.Label(text="Trés bien vous allez donc crée un compte joueur...",font=("bold",30),background=bg,fg=fg1,pady=40)
+            user_label=tkinter.Label(text="Choix du nom d'utilisateur:",font=("bold",30),background=bg,fg=fg3,pady=25)
+            user_entry=tkinter.Entry(bg="lightyellow",width=70)
+            password_label=tkinter.Label(text="Choisissez un mot de passe pour votre compte:",font=("bold",30),background=bg,fg=fg3,pady=25)
+            password_entry=tkinter.Entry(bg="lightyellow",width=70)
+            message2.pack()
+            message1.pack()
+            user_label.pack()
+            user_entry.pack()
+            password_label.pack()
+            password_entry.pack()
+            btn=tkinter.Button(text="S'inscrir",command=creation,font=("bold",30),background=bg,fg="light green")
+            btnn=tkinter.Button(text="  fermer la page  ",command=win1.quit,font=("bold",30),background=bg,fg="light green")
+            message3=tkinter.Label(text="Création du compte éffectuée,connectez vous pour continuer",font=("bold",30),background=bg,fg=fg3,pady=25)
+            btn.pack()
+            win1.mainloop()
+            btnn.destroy()
+            message3.destroy () #detruis avant pour qu'il ne vienne pas a la prochaine fois du genie
+            pass
+    else:
+            pass
+        
+        
+    message1.destroy()
+    message2.destroy()
+    entry1.destroy()
+    btn1.destroy()
+    win1.title("Page de connection...")
+    titre=tkinter.Label(text="Page de connection",font=("bold",30),background=bg,fg=fg2,pady=40)
+    user_label=tkinter.Label(text="Nom d'utilisteur :",font=("bold",30),background=bg,fg=fg3,pady=25)
+    user_entry=tkinter.Entry(bg="lightyellow",width=70)
+    password_label=tkinter.Label(text="Mot de passe:",font=("bold",30),background=bg,fg=fg3,pady=25)
+    password_entry=tkinter.Entry(bg="lightyellow",width=70)
+    btn2=tkinter.Button(text="Connexion",font=("bold",30),background=bg,fg="light green",command=win1.quit)
+    message3=tkinter.Label(text="le comptes que vous rechercher est introuvable !")
+    titre.pack()
+    user_label.pack()
+    user_entry.pack()
+    password_label.pack()
+    password_entry.pack()
+    btn2.pack()
+    
+    ad=True
+    while ad==True:
+                az = 0
+                while az == 0:
+                        win1.mainloop()
+                        try:
+                            with open("comptes/"+ user_entry.get(), "r") as fichier:
+                                az=1
+                        except:
+                            messagebox.showwarning("Probléme,concernant le compte","Le compte que vous rechercher est introuvable")
+                        
+                secure() 
+                ar = True
+                while ar == True:
+                    
+                    with open("comptes/" + user_entry.get(), "r") as fichier:          
+                        lines = fichier.readlines()
+                        
+                        if password_entry.get() != lines[1]:
+                            messagebox.showwarning("Probléme,concernant le mot de passe","Le mot de passe ne correspond pas pour ce compte")
+                            ar=False
+                            
+                        elif password_entry.get() == lines[1]:
+                        #quand la condition est valide ,pasde mainloop du genie
+                            somme = lines[0]
+                           
+                            ar= False
+                            ad=False
+                        secure()
+    with open("comptes/"+ user_entry.get()+".config","r") as fichier:  
+        color_lines=fichier.readlines()
+        bg=color_lines[0] 
+        win1.config(background=bg)  
+        if bg=="lightgrey":
+            fg2="black"
+        if bg=="black":
+            fg1="lightgreen"
+            fg2="yellow"
+        if bg=="cadetblue":
+            fg1="black"
+            fg2="yellow"
+    ae = True
+    while ae == True:
+        if bg=="lightgrey":
+            fg2="black"
+        if bg=="black":
+            fg2="yellow"
+            fg1="lightgreen"
+        if bg=="cadetblue":
+            fg1="black"
+            fg2="yellow"
+        with open("comptes/"+ user_entry.get()+".config","r") as fichier:  
+            color_lines=fichier.readlines()
+            bg=color_lines[0] 
+            win1.config(background=bg)  
+        
+
+        titre.destroy()
+        user_label.destroy()
+        password_label.destroy()
+        
+        user_entry.config(bg="black",fg="black")
+        password_entry.config(bg="black",fg="black")
+        
+        
+        btn2.destroy()
+        
+        mainmenu=tkinter.Menu(win1)
+        mainmenu.add_command(label="Affichage",command=modif_color)
+        user=tkinter.Menu(mainmenu)
+        user.add_command(label="status")
+        user.add_command(label="Retrait")
+        about=tkinter.Menu(mainmenu)
+        about.add_command(label="de l'application",command=apk)
+        about.add_command(label="du dévellopeur",command=FRED)
+        
+        mainmenu.add_cascade(label="Mon compte",menu=user)
+        mainmenu.add_cascade(label="A propos..",menu=about)
+        mainmenu.add_command(label="Quitter",command=win1.quit)
+        win1.config(menu=mainmenu)
+        win1.title("Connecter")  
+        with open("comptes/"+ user_entry.get()+".config","r") as fichier:  
+            color_lines=fichier.readlines()
+            bg=color_lines[0] 
+            win1.config(background=bg)  
+        
+         
+        ident=tkinter.Label(text="Connecter en tant que "+str(user_entry.get()),font=("bold",30),background=bg,fg=fg2,pady=15)
+        #user_entry.destroy()
+        #password_entry.destroy()
+        lucky=tkinter.Label(text="Bonne chance !!",font=("bold",25),background=bg,fg=fg1,pady=15)
+        frik=tkinter.Label(text="Vous disposez de "+str(somme) +" fcfa",font=("bold",25),background=bg,fg=fg1,pady=15)
+        chiffre_label=tkinter.Label(text="Faite le choix d'un chiffre compris entre 0 et 2",font=("bold",25),background=bg,fg=fg3,pady=15)
+        chiffre=tkinter.Entry()
+        btn=tkinter.Button(text="Allez !!",command=win1.quit,font=("bold",25),background=bg,fg="light green")
+        btn_deco=tkinter.Button(text="Déconnexion",command=deco,font=("bold",25),background=bg,fg="light green")
+        
+        #suite de position
+        ident.pack()
+        lucky.pack()
+        frik.pack()
+        chiffre_label.pack()
+        chiffre.pack()
+        btn.pack()
+        
+        
+        
+        mise = int()
+        chiffre_var =randrange(3)
+        new_somme = int()
+        # Debut boucle concernant le chiffre choisi.....
+        y = True
+        while y == 1:
+            if bg=="lightgrey":
+                    fg2="black"
+            if bg=="black":
+                fg1="lightgreen"
+                fg2="yellow"
+            if bg=="cadetblue":
+                fg2="yellow"
+                fg1="black"
+            win1.config(background=bg)
+            win1.mainloop()
+            if 0 < int(chiffre.get()) > 2 or int(chiffre.get()) < 0:
+                messagebox.showwarning("concernant le chiffre choisi","Vous devez choisir entre :0 , 1 et 2")
+            else:
+                y = False
+                btn.destroy()
+                
+        # Début de la boucle concernant la mise.....
+        u = 1
+        with open("comptes/"+ user_entry.get()+".config","r") as fichier:  
+            color_lines=fichier.readlines()
+            bg=color_lines[0] 
+            win1.config(background=bg)  
+            
+        mise_label=tkinter.Label(text="Entrez la somme que vous souhaitez miser",font=("bold",25),background=bg,fg=fg3,pady=15)
+        mise_entry=tkinter.Entry()
+        btn=tkinter.Button(text="Valider",command=win1.quit,font=("bold",25),background=bg,fg="light green")
+    
+        mise_label.pack()
+        mise_entry.pack()
+        btn.pack()
+        
+         
+        
+        while u == 1:
+            if bg=="lightgrey":
+                fg2="black"
+            if bg=="black":
+                fg2="yellow"
+                fg1="lightgreen"
+            if bg=="cadetblue":
+                fg2="yellow"
+                fg1="black"
+            win1.mainloop()
+            if int(mise_entry.get()) > int(somme):
+                messagebox.showwarning("concernant la somme miser","Votre solde est  inssuffisant !")
+            elif int(mise_entry.get()) <= 99:
+                messagebox.showwarning("concernant la somme miser","La mise doit être superieur ou egale a 100 fcfa")  
+            else:
+                u = 2
+        lucky.destroy()
+        frik.destroy()
+        chiffre_label.destroy()
+        if bg=="cadetblue":
+            fg1="black"
+
+        btn.destroy()       
+        mise_label.destroy()
+        btn.destroy()
+        somme_after_mise = int()
+        somme_after_mise = int(somme) - int(mise_entry.get())
+        do=tkinter.Label(text="Vous avez misez "+mise_entry.get()+" sur le chiffre "+chiffre.get(),font=("bold",30),background=bg,fg=fg1,pady=15)  
+        roue=tkinter.Label(text="La roue as tourner !!!",font=("bold",30),background=bg,fg=fg1,pady=15)  
+        chiffre_gagant=tkinter.Label(text="Le chiffre gagant est: "+ str(chiffre_var),font=("bold",25),background=bg,fg=fg1,pady=15)
+        dev=tkinter.Label(text="Votre choix s'est porter sur le chiffre "+chiffre.get(),font=("bold",25),background=bg,fg=fg1,pady=15) 
+        do.pack()
+        roue.pack()  
+        chiffre_gagant.pack()     
+        dev.pack()
+        # En cas de gain......
+        if int(chiffre.get()) == int(chiffre_var):
+            new_somme = int(int(mise_entry.get())) + int(somme)
+            gagner=tkinter.Label(text="Gagner",font=("bold",20),background=bg,fg=fg2,pady=15)
+            felicita=tkinter.Label(text=winner[randrange(5)],font=("bold",25),background=bg,fg=fg1,pady=15)
+            felicita1=tkinter.Label(text="Vous venez de gagner "+mise_entry.get()+" fcfa",font=("bold",25),background=bg,fg=fg1,pady=15)
+        
+            gagner.pack()
+            felicita.pack()  
+            felicita1.pack()
+            mise_entry.destroy()
+            chiffre.destroy() 
+            with open("comptes/" + user_entry.get(), "w") as fichier:
+                fichier.write(str(new_somme))
+                fichier.write(str("\n" + password_entry.get()))
+                time.sleep(0.5)
+            secure()
+            button=tkinter.Button(win1,text="D'accord",command=win1.quit,font=("bold",25),background=bg,fg="light green")
+            button.pack()
+            btn_deco.destroy()
+            win1.config(background=bg)
+            win1.mainloop()
+            gagner.destroy()
+            felicita.destroy()  
+            felicita1.destroy()
+        
+        else:
+            # En cas de perte....
+            new_somme = int(somme) - int(mise_entry.get())
+            gagner=tkinter.Label(text="Perdu",font=("bold",20),background=bg,fg=fg3,pady=15)
+            felicita=tkinter.Label(text=loser[randrange(5)],font=("bold",25),background=bg,fg=fg1,pady=15)
+            felicita1=tkinter.Label(text="Les "+mise_entry.get()+" fcfa misées sont retirer de votre compte",font=("bold",25),background=bg,fg=fg1,pady=15)
+        
+            gagner.pack()
+            felicita.pack()  
+            felicita1.pack()
+            mise_entry.destroy()
+            chiffre.destroy() 
+            with open("comptes/" + user_entry.get(), "w") as fichier:
+                fichier.write(str(new_somme))
+                fichier.write(str("\n" + password_entry.get()))
+                time.sleep(0.5)
+            secure()
+            button=tkinter.Button(win1,text="D'accord",command=win1.quit,font=("bold",20),background=bg,fg="light green",pady=5)
+            button.pack()
+            #   btn_deco.pack()
+            win1.config(background=bg)
+            win1.mainloop()
+            gagner.destroy()
+            felicita.destroy()  
+            felicita1.destroy()
+        if bg=="lightgrey":
+            fg2="black"
+        if bg=="black":
+            fg2="yellow"
+            fg1="lightgreen"
+        if bg=="cadetblue":
+            fg1="black"
+        if bg=="cadetblue":
+            fg1="black"
+            fg2="yellow"
+        
+
+        # pour actualiser le solde j'ai fait....
+        somme = new_somme
+        # Concernant le solde vide ....
+        if int(somme) == 0:
+            message=tkinter.Label(text="Votre solde est totalement vide.",font=("bold",25),background=bg,fg=fg1,pady=15)
+            message1=tkinter.Label(text="Merci d'avoir jouer.",font=("bold",25),background=bg,fg=fg1,pady=25)
+            button=tkinter.Button(win1,text="D'accord",command=win1.quit,font=("bold",25),background=bg,fg="light green")
+            message.pack()
+            message1.pack()
+            button.pack()
+            win1.mainloop()
+            message.destroy()
+            message1.destroy()
+            button.destroy()
+        if int(somme) <= 99:
+            message1=tkinter.Label(text="Votre solde est insuffisant pour continuer.",font=("bold",25),background=bg,fg=fg1,pady=15)
+            button=tkinter.Button(win1,text="D'accord",command=win1.quit,font=("bold",25),background=bg,fg="light green")
+            
+            with open("comptes/" + user_entry.get(), "w") as fichier:
+                    fichier.write(str(somme))
+                    fichier.write(str("\n" + password_entry.get()))
+                    time.sleep(0.5)
+            secure()
+            message1.pack()
+            button.pack()
+            win1.mainloop()
+            message1.destroy()
+            button.destroy()
+        ident.destroy()
+        #btn_deco.destroy()
+        do.destroy()
+        roue.destroy()  
+        chiffre_gagant.destroy()     
+        dev.destroy()  
+        button.destroy()
+        with open("comptes/"+ user_entry.get()+".config","r") as fichier:  
+            color_lines=fichier.readlines()
+            bg=color_lines[0] 
+            win1.config(background=bg)  
+        
+            
+    
+            
+#1234567891011121314151617181920    ici fred             
+                 #le flux de donnés se trouve ici fred ici
